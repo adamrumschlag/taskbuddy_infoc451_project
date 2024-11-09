@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task Tracker</title>
+</head>
+<body>
+
+    <nav class="navbar sticky">
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="addtask.html">Add Task</a></li>
+            </ul>
+      </div>
+    </nav>
+
+    <h1>Task Buddy</h1>
+    <h2>Created Tasks</h2>
+    <div id="taskContainer" class="task-container">
+    <table id="taskTable" class="task-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Assignee</th>
+                <th>Due Date</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="taskTableBody"></tbody> 
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+*  {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+
+/*  Navigation  */
+nav {
+    margin: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.nav-title {
+    font-size: 30px;
+    margin: 25px;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+    margin-right: 15px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #000;
+    padding: 15px;
+    display: block;
+    letter-spacing: 3px;
+}
+
+.navbar-links li:hover {
+    background-color: #5555;
+}
+
+
+/*  Form  */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin: 5px;
+    padding: 5px;
+}
+
+input {
+    margin: 5x;
+    padding: 5px;
+   
+}
+
+#desc {
+    padding: 25px;
+    width: 200px;
+}
+
+#submit {
+    padding: 10px;
+    width: 250px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#submit:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.task {
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.task p {
+    margin: 8px 0;
+}
+
+#btn-edit {
+    background-color: #000068;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+#btn-delete {
+    background-color: #FF474D;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+#btn-save {
+    background-color: #00A36C;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+
+button:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.past-due {
+    background-color: #FF7A80;
+}
+
+.due-soon {
+    background-color: #FFBF00;
+}
+
+.task-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.task-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+

@@ -14,9 +14,9 @@ function displayTasks() {
         const timeDifference = dueDate - currentDate;
         const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
-        if (daysDifference < -1) {
+        if (daysDifference < -1 && task.status !== "Complete") {
             row.classList.add("past-due");
-        } else if (daysDifference <= 3) {
+        } else if (daysDifference <= 3 && task.status !== "Complete") {
             row.classList.add("due-soon");
         }
 
@@ -26,6 +26,14 @@ function displayTasks() {
             <td><span class="view-mode">${task.assignee}</span><input class="edit-mode" type="text" value="${task.assignee}" style="display:none"></td>
             <td><span class="view-mode">${task.dueDate}</span><input class="edit-mode" type="date" value="${task.dueDate}" style="display:none"></td>
             <td><span class="view-mode">${task.description}</span><input class="edit-mode" type="text" value="${task.description}" style="display:none"></td>
+            <td>
+                <span class="view-mode">${task.status}</span>
+                <select class="edit-mode" style="display:none">
+                    <option value="Not Started" ${task.status === "Not Started" ? "selected" : ""}>Not Started</option>
+                    <option value="In Progress" ${task.status === "In Progress" ? "selected" : ""}>In Progress</option>
+                    <option value="Complete" ${task.status === "Complete" ? "selected" : ""}>Complete</option>
+                </select>
+            </td>   
             <td>
                 <button onclick="editTask(${index})" id="btn-edit" class="edit-button">Edit</button>
                 <button onclick="saveTask(${index})" id="btn-save" class="save-button" style="display:none">Save</button>
@@ -55,13 +63,16 @@ function saveTask(index) {
     const updatedAssignee = row.querySelectorAll(".edit-mode")[1].value;
     const updatedDueDate = row.querySelectorAll(".edit-mode")[2].value;
     const updatedDescription = row.querySelectorAll(".edit-mode")[3].value;
+    const updatedStatus = row.querySelectorAll(".edit-mode")[4].value;
+
 
     // Update The Task
     tasks[index] = {
         name: updatedName,
         assignee: updatedAssignee,
         dueDate: updatedDueDate,
-        description: updatedDescription
+        description: updatedDescription, 
+        status: updatedStatus
     };
 
     // Save The Updates
@@ -82,8 +93,9 @@ function saveNewTask(event) {
     const assignee = document.getElementById("assignee").value;
     const dueDate = document.getElementById("dueDate").value;
     const description = document.getElementById("description").value;
+    const status = document.getElementById("status").value;
 
-    const newTask = { name, assignee, dueDate, description };
+    const newTask = { name, assignee, dueDate, description, status };
 
     const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.push(newTask); 
